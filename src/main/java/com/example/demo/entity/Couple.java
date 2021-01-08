@@ -9,8 +9,7 @@ import javax.persistence.*;
 public class Couple {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
 
     private String coupleLeft;
 
@@ -23,17 +22,18 @@ public class Couple {
     public Couple() {
     }
 
-    public Couple(String coupleLeft, String coupleRight, Question question) {
+    public Couple(String id, String coupleLeft, String coupleRight, Question question) {
+        this.id = id;
         this.coupleLeft = coupleLeft;
         this.coupleRight = coupleRight;
         this.question = question;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
