@@ -5,5 +5,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CoupleRepo extends JpaRepository<Couple, String> {
-
+    Couple getByCoupleLeft(String coupleLeft);
+    Couple getByCoupleRight(String coupleRight);
 }

@@ -43,7 +43,12 @@ class DemoApplicationTests {
 
 		questionRepo.save(question1);
 
-
+		if (coupleRepo.getByCoupleLeft("Aur").getId()
+				.equals(coupleRepo.getByCoupleRight("Золото").getId())){
+			System.out.println("Правильный ответ");
+		} else {
+			System.out.println("Ответ неверен");
+		}
 	}
 
 }
