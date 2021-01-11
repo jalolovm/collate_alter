@@ -10,6 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 class DemoApplicationTests {
@@ -21,19 +24,26 @@ class DemoApplicationTests {
 
 	@Test
 	void contextLoads() {
-		Question question1 = new Question("1", "Составьте правильные пары");
 
-		Couple couple11 = new Couple("one", "Aur", "Золото", question1);
-		Couple couple12 = new Couple("two", "H", "Водород", question1);
-		Couple couple13 = new Couple("three", "O", "Кислород", question1);
-		Couple couple14 = new Couple("four", "He", "Гелий", question1);
+
+		Couple couple11 = new Couple("one", "Aur", "Золото");
+		Couple couple12 = new Couple("two", "H", "Водород");
+		Couple couple13 = new Couple("three", "O", "Кислород");
+		Couple couple14 = new Couple("four", "He", "Гелий");
+
+		List<Couple> couples = new ArrayList<>();
+
+		couples.add(couple11);
+		couples.add(couple12);
+		couples.add(couple13);
+		couples.add(couple14);
+
+		Question question1 = new Question("1a", "Составьте правильные пары", couples);
+
 
 		questionRepo.save(question1);
 
-		coupleRepo.save(couple11);
-		coupleRepo.save(couple12);
-		coupleRepo.save(couple13);
-		coupleRepo.save(couple14);
+
 	}
 
 }

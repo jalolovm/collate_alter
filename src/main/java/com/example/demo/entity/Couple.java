@@ -15,18 +15,13 @@ public class Couple {
 
     private String coupleRight;
 
-    @ManyToOne
-    @JoinColumn(name = "question_ID")
-    private Question question;
-
     public Couple() {
     }
 
-    public Couple(String id, String coupleLeft, String coupleRight, Question question) {
+    public Couple(String id, String coupleLeft, String coupleRight) {
         this.id = id;
         this.coupleLeft = coupleLeft;
         this.coupleRight = coupleRight;
-        this.question = question;
     }
 
     public String getId() {
@@ -52,12 +47,12 @@ public class Couple {
     public void setCoupleRight(String coupleRight) {
         this.coupleRight = coupleRight;
     }
-
-    public Question getCollate() {
-        return question;
-    }
-
-    public void setCollate(Question question) {
-        this.question = question;
-    }
+//
+//    public Question getCollate() {
+//        return question;
+//    }
+//
+//    public void setCollate(Question question) {
+//        this.question = question;
+//    }
 }
